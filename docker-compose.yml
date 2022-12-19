@@ -8,7 +8,13 @@ services:
     image: louislam/uptime-kuma:1
     container_name: uptime-kuma
     volumes:
-      - ./uptime-kuma-data:/app/data
+      - uptime-kuma-dataa:/app/data
     ports:
       - 3001:3001  # <Host Port>:<Container Port>
     restart: always
+
+
+volumes:
+  uptime-kuma-dataa:
+    driver_opts:
+      size: 200Mi
